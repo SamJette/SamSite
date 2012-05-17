@@ -2,3 +2,4 @@
 "ERROR","web-0","05/17/2012","17:22:47","","key [pluginmanager] doesn't exist in struct (keys:)"
 "ERROR","web-0","05/17/2012","17:23:02","","key [pluginmanager] doesn't exist in struct (keys:)"
 "ERROR","web-0","05/17/2012","18:08:58","","datasource [samsite] doesn't exist"
+"ERROR","web-0","05/17/2012","22:57:20","","Cannot add or update a child row: a foreign key constraint fails (`samsite`.`classes_students`, CONSTRAINT `FK_classes_students_schoolyears` FOREIGN KEY (`schoolyearid`) REFERENCES `schoolyears` (`id`))"
