@@ -2,7 +2,7 @@
 	If you leave these settings commented out, Wheels will set the data source name to the same name as the folder the application resides in.
 	<cfset set(dataSourceName="")>
 	<cfset set(dataSourceUserName="")>
-	<cfset set(dataSourcePassword="")> 
+	<cfset set(dataSourcePassword="")>
 --->
 
 <!---
@@ -12,3 +12,4 @@
 	To run with rewriting "On", you need to apply the necessary rewrite rules on the web server first.
 	<cfset set(URLRewriting="Partial")>
 --->
+<cfset set(reloadPassword="samsite")>
