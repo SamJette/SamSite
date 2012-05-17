@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><railo-configuration version="2.0">
+<?xml version="1.0" encoding="UTF-8"?><railo-configuration password="666e6bdc20b16667c9c3868a1961875748da8df26cb6dd96" version="2.0"><cfabort/>
 
 <!-- 
 Path placeholders:
@@ -31,7 +31,7 @@ Path placeholders:
 <!--	or ask your database distributor 																-->
 
 	<data-sources>
-	</data-sources>
+	<data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="localhost" metaCacheTimeout="60000" name="samsite" port="3306" storage="false" username="root" validate="false"/></data-sources>
 	
 	<resources>
     	<!--
