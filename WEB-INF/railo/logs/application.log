@@ -1,0 +1,3 @@
+"Severity","ThreadID","Date","Time","Application","Message"
+"ERROR","web-0","05/17/2012","17:22:47","","key [pluginmanager] doesn't exist in struct (keys:)"
+"ERROR","web-0","05/17/2012","17:23:02","","key [pluginmanager] doesn't exist in struct (keys:)"
