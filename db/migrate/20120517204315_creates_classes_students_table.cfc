@@ -18,18 +18,20 @@
       t.decimal(columnNames='hourlyWage', default='', null=true, precision='1', scale='2');
       t.date(columnNames='dateOfBirth', default='', null=true);
 --->
-<cfcomponent extends="plugins.dbmigrate.Migration" hint="creates students table">
+<cfcomponent extends="plugins.dbmigrate.Migration" hint="creates classes_students table">
   <cffunction name="up">
     <cfscript>
-      t = createTable(name='tableName');
-      
+      t = createTable(name='classes_students');
+      t.string(columnNames='schoolyear');
+      t.references(referenceNames="student");
+      t.references(referenceNames="class");
       t.timestamps();
       t.create();
     </cfscript>
   </cffunction>
   <cffunction name="down">
     <cfscript>
-      dropTable('tableName');
+      dropTable('classes_students');
     </cfscript>
   </cffunction>
 </cfcomponent>
