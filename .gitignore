@@ -1,0 +1,37 @@
+# unpacked plugin folders
+plugins/**/*
+
+#railo folders
+
+WEB-INF/tmp/*
+WEB-INF/railo/output/*
+WEB-INF/railo/temp/*
+WEB-INF/railo/logs/*
+WEB-INF/railo/cfclasses/CF_*
+
+# files directory where uploads go
+files
+
+# DBMigrate plugin: generated SQL
+db/sql
+
+# AssetBundler plugin: generated bundles
+javascripts/bundles
+stylesheets/bundles
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore other unneeded files.
+doc/
+*.swp
+*~
+.project
+.DS_Store
