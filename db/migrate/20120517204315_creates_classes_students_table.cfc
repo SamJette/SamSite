@@ -23,7 +23,6 @@
     <cfscript>
       t = createTable(name='classes_students');
       t.string(columnNames='schoolyear');
-      t.references(referenceNames="schoolyear");
       t.references(referenceNames="student");
       t.references(referenceNames="class");
       t.timestamps();
