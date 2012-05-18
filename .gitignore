@@ -2,7 +2,6 @@
 plugins/**/*
 
 #railo folders
-
 WEB-INF/tmp/*
 WEB-INF/railo/output/*
 WEB-INF/railo/temp/*
