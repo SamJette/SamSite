@@ -22,7 +22,7 @@
   <cffunction name="up">
     <cfscript>
       t = createTable(name='schoolyears');
-      t.year(columnNames='startdate,enddate');
+      t.date(columnNames='startdate,enddate');
       t.timestamps();
       t.create();
     </cfscript>
