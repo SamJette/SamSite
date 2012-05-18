@@ -1,42 +1,43 @@
 component extends="Controller" output="false" {
-  
+
   public void function init(){
+    super.init();
   }
-  
+
   // schoolyears/index
   public void function index(){
     schoolyears = model("Schoolyear").findAll();
   }
-  
+
   // schoolyears/show/key
   public void function show(){
     schoolyear = model("Schoolyear").findByKey(params.key);
-    	
+
     if (!IsObject(schoolyear)){
       flashInsert(error="Schoolyear #params.key# was not found");
       redirectTo(action="index");
     }
   }
-  
+
   // schoolyears/new
   public void function new(){
     schoolyear = model("Schoolyear").new();
   }
-  
+
   //schoolyears/edit/key
   public void function edit(){
     schoolyear = model("Schoolyear").findByKey(params.key);
-    	
+
     if (!IsObject(schoolyear)){
 	    flashInsert(error="Schoolyear #params.key# was not found");
 			redirectTo(action="index");
 	  }
   }
-  
+
   // schoolyears/create
   public void function create(){
     schoolyear = model("Schoolyear").new(params.schoolyear);
-		
+
 		if (schoolyear.save()){
 			flashInsert(success="The schoolyear was created successfully.");
       redirectTo(action="index");
@@ -45,11 +46,11 @@ component extends="Controller" output="false" {
 		  renderPage(action="new");
 		}
   }
-  
+
   // schoolyears/update
   public void function update(){
     schoolyear = model("Schoolyear").findByKey(params.key);
-		
+
 		if (schoolyear.update(params.schoolyear)){
 		  flashInsert(success="The schoolyear was updated successfully.");
       redirectTo(action="index");
@@ -58,7 +59,7 @@ component extends="Controller" output="false" {
 			renderPage(action="edit");
 		}
   }
-  
+
   // schoolyears/delete/key
   public void function delete(){
     schoolyear = model("Schoolyear").findByKey(params.key);
@@ -71,5 +72,5 @@ component extends="Controller" output="false" {
 			redirectTo(action="index");
     }
   }
-  
+
 }

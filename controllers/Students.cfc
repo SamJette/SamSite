@@ -1,42 +1,43 @@
 component extends="Controller" output="false" {
-  
+
   public void function init(){
+    super.init();
   }
-  
+
   // students/index
   public void function index(){
     students = model("Student").findAll();
   }
-  
+
   // students/show/key
   public void function show(){
     student = model("Student").findByKey(params.key);
-    	
+
     if (!IsObject(student)){
       flashInsert(error="Student #params.key# was not found");
       redirectTo(action="index");
     }
   }
-  
+
   // students/new
   public void function new(){
     student = model("Student").new();
   }
-  
+
   //students/edit/key
   public void function edit(){
     student = model("Student").findByKey(params.key);
-    	
+
     if (!IsObject(student)){
 	    flashInsert(error="Student #params.key# was not found");
 			redirectTo(action="index");
 	  }
   }
-  
+
   // students/create
   public void function create(){
     student = model("Student").new(params.student);
-		
+
 		if (student.save()){
 			flashInsert(success="The student was created successfully.");
       redirectTo(action="index");
@@ -45,11 +46,11 @@ component extends="Controller" output="false" {
 		  renderPage(action="new");
 		}
   }
-  
+
   // students/update
   public void function update(){
     student = model("Student").findByKey(params.key);
-		
+
 		if (student.update(params.student)){
 		  flashInsert(success="The student was updated successfully.");
       redirectTo(action="index");
@@ -58,7 +59,7 @@ component extends="Controller" output="false" {
 			renderPage(action="edit");
 		}
   }
-  
+
   // students/delete/key
   public void function delete(){
     student = model("Student").findByKey(params.key);
@@ -71,5 +72,5 @@ component extends="Controller" output="false" {
 			redirectTo(action="index");
     }
   }
-  
+
 }

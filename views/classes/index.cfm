@@ -1,27 +1,24 @@
-<h1>Listing classes</h1>
-
-<cfoutput>#includePartial("showFlash")#</cfoutput>
-
 <cfoutput>
+	<h1>Listing classes</h1>
+	#includePartial("showFlash")#
 	<p>#linkTo(text="New class", action="new")#</p>
+	<div class="span6">
+		<table class="table table-striped table-condensed row">
+			<thead>
+				<tr>
+					<th>Class</th>
+					<th>Teacherid</th>
+				</tr>
+			</thead>
+			<tbody>
+				<cfloop query="classes">
+					<tr>
+						<td>#class#</td>
+						<td>#teacherid#</td>
+						#includePartial("editDelete")#
+					</tr>
+				</cfloop>
+			</tbody>
+		</table>
+	</div>
 </cfoutput>
-
-<cftable query="classes" colHeaders="true" HTMLTable="true">
-
-	<cfcol header="Id" text="#id#" />
-
-	<cfcol header="Class" text="#class#" />
-
-	<cfcol header="Teacherid" text="#teacherid#" />
-
-<!--- 	<cfcol header="Createdat" text="#createdat#" />
-
-	<cfcol header="Updatedat" text="#updatedat#" />
-
-	<cfcol header="Deletedat" text="#deletedat#" /> --->
-
-	<cfcol header="" text="#linkTo(text='Show', action='show', key=id)#" />
-	<cfcol header="" text="#linkTo(text='Edit', action='edit', key=id)#" />
-	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />
-</cftable>
-

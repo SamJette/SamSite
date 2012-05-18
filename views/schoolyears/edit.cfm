@@ -1,19 +1,13 @@
-<h1>Editing schoolyear</h1>
-
-<cfoutput>#includePartial("showFlash")#</cfoutput>
-
 <cfoutput>
-
-	#errorMessagesFor("schoolyear")#
-
+<cfset start=DateFormat(Now(), 'YYYY')>
+<cfset end=DateFormat(Now(), 'YYYY')+1>
+<h1>Editing schoolyear</h1>
+#includePartial("../showFlash")#
+#errorMessagesFor("schoolyear")#
 	#startFormTag(action="update", key=params.key)#
-
-		#dateSelect(objectName='schoolyear', property='startdate', label='Startdate',  order='year')#
-
-		#dateSelect(objectName='schoolyear', property='enddate', label='Enddate',  order='year')#
-		#submitTag()#
-
+		#dateSelect(objectName='schoolyear', property='startdate', label='Startdate', label='Startdate', startYear=#start#, order='year')#
+		#dateSelect(objectName='schoolyear', property='enddate', label='Enddate', startYear=#end#, order='year')#
+		#includePartial(form)#
 	#endFormTag()#
-
-#linkTo(text="Return to the listing", action="index")#
+#includePartial("../toListing")#
 </cfoutput>

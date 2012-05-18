@@ -1,35 +1,32 @@
-<h1>Listing students</h1>
-
-<cfoutput>#includePartial("showFlash")#</cfoutput>
-
 <cfoutput>
+	<h1>Listing students</h1>
+	#includePartial("../showFlash")#
 	<p>#linkTo(text="New student", action="new")#</p>
+	<div class="span10">
+		<table class="table table-striped table-condensed row">
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>Name</th>
+					<th>Password</th>
+					<th>Email</th>
+					<th>Number</th>
+					<th>Online</th>
+				</tr>
+			</thead>
+			<tbody>
+				<cfloop query="students">
+					<tr>
+						<td>#firstname#</td>
+						<td>#name#</td>
+						<td>#password#</td>
+						<td>#email#</td>
+						<td>#number#</td>
+						<td>#IIF(isonline, DE("Online"), DE("Offline"))#</td>
+						#includePartial("../editDelete")#
+					</tr>
+				</cfloop>
+			</tbody>
+		</table>
+	</div>
 </cfoutput>
-
-<cftable query="students" colHeaders="true" HTMLTable="true">
-
-					<cfcol header="Id" text="#id#" />
-
-					<cfcol header="Firstname" text="#firstname#" />
-
-					<cfcol header="Name" text="#name#" />
-
-					<cfcol header="Password" text="#password#" />
-
-					<cfcol header="Email" text="#email#" />
-
-					<cfcol header="Number" text="#number#" />
-
-					<cfcol header="Isonline" text="#IIF( isonline, DE("Online"), DE("Offline") )#" />
-
-					<!--- <cfcol header="Createdat" text="#createdat#" />
-
-					<cfcol header="Updatedat" text="#updatedat#" />
-
-					<cfcol header="Deletedat" text="#deletedat#" /> --->
-
-	<cfcol header="" text="#linkTo(text='Show', action='show', key=id)#" />
-	<cfcol header="" text="#linkTo(text='Edit', action='edit', key=id)#" />
-	<cfcol header="" text="#linkTo(text='Delete', action='delete', key=id, confirm='Are you sure?')#" />
-</cftable>
-
