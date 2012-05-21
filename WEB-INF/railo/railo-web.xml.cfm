@@ -21,7 +21,7 @@ Path placeholders:
 		suppress-whitespace	-	supress white space in response
 		show-version - show railo version uin response header
 	 -->
-	<setting/>
+	<setting allow-compression="true" content-length="" suppress-content="false" suppress-whitespace="true"/>
 
 <!--	definition of all database used inside your application. 										-->
 <!--	above you can find some definition of jdbc drivers (all this drivers are included at railo) 	-->
@@ -31,7 +31,7 @@ Path placeholders:
 <!--	or ask your database distributor 																-->
 
 	<data-sources>
-	<data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="localhost" metaCacheTimeout="60000" name="samsite" port="3306" storage="false" username="root" validate="false"/></data-sources>
+	<data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionLimit="-1" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="ec2-50-19-213-178.compute-1.amazonaws.com" metaCacheTimeout="60000" name="samsite" password="encrypted:d60709400b894b4f9dcc4e89ebf350c2" port="3306" storage="false" username="sam" validate="true"/><data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="localhost" metaCacheTimeout="60000" name="sam" port="3306" storage="false" username="root" validate="false"/></data-sources>
 	
 	<resources>
     	<!--
@@ -143,13 +143,13 @@ Path placeholders:
 		timeserver: [example: swisstime.ethz.ch] default:local time
 			dns of a ntp time server
 	-->
-	<regional/>
+	<regional locale="nl_BE" timeserver="pool.ntp.org" timezone="Europe/Brussels" use-timeserver="true"/>
 	
 	<!--
 		enable and disable debugging
 	 -->
-	<debugging template="/railo-context/templates/debugging/debugging.cfm"/>
+	<debugging show-query-usage="true" template="/railo-context/templates/debugging/debugging.cfm"/>
 		
-	<application application-log="{railo-web}/logs/application.log" application-log-level="error" cache-directory="{railo-web}/cache/" cache-directory-max-size="100mb" exception-log="{railo-web}/logs/exception.log" exception-log-level="error" trace-log="{railo-web}/logs/trace.log" trace-log-level="info"/>
+	<application application-log="{railo-web}/logs/application.log" application-log-level="error" cache-directory="{railo-web}/cache/" cache-directory-max-size="100mb" exception-log="{railo-web}/logs/exception.log" exception-log-level="error" listener-mode="curr2root" listener-type="modern" trace-log="{railo-web}/logs/trace.log" trace-log-level="info"/>
 	
 </railo-configuration>

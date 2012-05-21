@@ -2,6 +2,7 @@ component extends="Controller" output="false" {
 
   public void function init(){
     super.init();
+    filters(through="redirectStudent");
   }
 
   // classes/index

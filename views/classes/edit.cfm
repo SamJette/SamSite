@@ -1,9 +1,9 @@
 <cfoutput>
 <h1>Editing class</h1>
-#includePartial("showFlash")#
+#includePartial("../showFlash")#
 #errorMessagesFor("class")#
 	#startFormTag(action="update", key=params.key)#
 		#includePartial("form")#
 	#endFormTag()#
-#includePartial("toListing")#
+#includePartial("../toListing")#
 </cfoutput>

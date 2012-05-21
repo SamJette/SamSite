@@ -6,12 +6,15 @@
 		<table class="table table-striped table-condensed row">
 			<thead>
 				<tr>
-					<th>Title</th>
+					<th>id</th>
+					<th>Startdate</th>
+					<th>Enddate</th>
 				</tr>
 			</thead>
 			<tbody>
 				<cfloop query="schoolyears">
 					<tr>
+						<td>#id#</td>
 						<td>#DateFormat(startdate, 'YYYY')#</td>
 						<td>#DateFormat(enddate, 'YYYY')#</td>
 						#includePartial("../editDelete")#

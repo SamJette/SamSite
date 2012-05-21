@@ -6,6 +6,7 @@
 		<table class="table table-striped table-condensed row">
 			<thead>
 				<tr>
+					<th>id</th>
 					<th>Firstname</th>
 					<th>Name</th>
 					<th>Password</th>
@@ -17,6 +18,7 @@
 			<tbody>
 				<cfloop query="students">
 					<tr>
+						<td>#id#</td>
 						<td>#firstname#</td>
 						<td>#name#</td>
 						<td>#password#</td>

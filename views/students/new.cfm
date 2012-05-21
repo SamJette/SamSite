@@ -3,7 +3,7 @@
 	#includePartial("../showFlash")#
 	#errorMessagesFor("student")#
 	#startFormTag(action="create")#
-		#includePartial(form)#
+		#includePartial("form")#
 	#endFormTag()#
 	#includePartial("../toListing")#
 </cfoutput>
