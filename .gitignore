@@ -34,3 +34,7 @@ doc/
 *~
 .project
 .DS_Store
+
+# Windows IIS files
+IsapiRewrite4.ini
+web.config
