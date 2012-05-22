@@ -13,7 +13,7 @@ component extends="Wheels" output="false" {
 
   public void function redirectStudent (){
 		if (session.user.roleid GT 2){
-  			redirectTo(controller = "main", action = "");
+  			redirectTo(controller = "main", action = "home");
   		}
   	}
 }

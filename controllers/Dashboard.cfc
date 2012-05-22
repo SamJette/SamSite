@@ -44,7 +44,7 @@ component extends="Controller" output="false" {
 				session.user.name = stuser.name;
 				session.user.role = "student";
 				session.user.roleid = 3;
-				redirectTo(controller="home", action="");
+				redirectTo(controller="main", action="home");
 			}else{
 				user = model("teacher").new(email=params.user.email);
 				flashInsert(error="The email and password you entered are not valid.");

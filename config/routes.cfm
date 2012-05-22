@@ -4,4 +4,5 @@
 --->
 
 
-<cfset addRoute(name="home", pattern="", controller="dashboard", action="login")>
+<cfset addRoute(name="login", pattern="", controller="dashboard", action="login")>
+<cfset addRoute(name="home", pattern="", controller="main", action="home")>

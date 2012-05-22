@@ -3,7 +3,7 @@
   public void function init(){
 
   }
-  public void function index(){
+  public void function home(){
 	output="Studenten pagina";
   }
 
