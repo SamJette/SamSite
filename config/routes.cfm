@@ -7,7 +7,7 @@ your application and edit the default one.
 <cfscript>
 
 drawRoutes()
-	.root(controller="main", action="home")
+	.root(controller="main", action="login")
 	.namespace("admin")
 		.resources(name="answers", nested="true")
 		.end()
