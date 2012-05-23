@@ -3,11 +3,9 @@ component extends="Controller" output="false" {
     //super.init();
 	provides("html,xml,json,csv");
   }
- public void function export(){
+ public void function index(){
 	output = model("students").findAll();
-   if(params.format == 'json'){
-        renderWith(data=output);
-    }
+        renderWith(data=output, layout="false");
 
   }
 

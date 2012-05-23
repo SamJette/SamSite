@@ -148,7 +148,7 @@ Path placeholders:
 	<!--
 		enable and disable debugging
 	 -->
-	<debugging show-query-usage="true" template="/railo-context/templates/debugging/debugging.cfm"/>
+	<debugging show-query-usage="true" template="/railo-context/templates/debugging/debugging-2-console.cfm"/>
 		
 	<application application-log="{railo-web}/logs/application.log" application-log-level="error" cache-directory="{railo-web}/cache/" cache-directory-max-size="100mb" exception-log="{railo-web}/logs/exception.log" exception-log-level="error" listener-mode="curr2root" listener-type="modern" trace-log="{railo-web}/logs/trace.log" trace-log-level="info"/>
 	
