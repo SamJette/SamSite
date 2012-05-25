@@ -5,5 +5,4 @@
 	#textField(objectName='teacher', property='email', label='Email')#
 	#textField(objectName='teacher', property='roleid', label='Roleid')#
 	#checkBox(objectName='teacher', property='isactivated', label='Isactivated')#
-	#submitTag(class='btn')#
 </cfoutput>

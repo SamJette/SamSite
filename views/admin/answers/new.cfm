@@ -4,6 +4,7 @@
 	#errorMessagesFor("answer")#
 	#startFormTag(action="create")#
 		#includePartial("form")#
+		#includePartial("../submit")#
 	#endFormTag()#
 	#includePartial("../toListing")#
 </cfoutput>

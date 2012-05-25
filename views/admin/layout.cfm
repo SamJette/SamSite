@@ -123,8 +123,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<cfoutput>
-    	#javaScriptIncludeTag("jquery-1.7.2.min")#
+    #javaScriptIncludeTag("jquery-1.7.2.min")#
 		#javaScriptIncludeTag("bootstrap.min")#
-    </cfoutput>
+    #javaScriptIncludeTag("wheels")#
+  </cfoutput>
      </body>
 </html>

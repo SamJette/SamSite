@@ -101,6 +101,7 @@
 	  <cfoutput>
 		#javaScriptIncludeTag("jquery-1.7.2.min")#
 		#javaScriptIncludeTag("bootstrap.min")#
+		#javaScriptIncludeTag("wheels")#
 	</cfoutput>
 	 </body>
 </html>

@@ -5,9 +5,9 @@
 #includePartial("../showFlash")#
 #errorMessagesFor("schoolyear")#
 	#startFormTag(action="update", key=params.key)#
-		#dateSelect(objectName='schoolyear', property='startdate', label='Startdate', label='Startdate', startYear=#start#, order='year')#
-		#dateSelect(objectName='schoolyear', property='enddate', label='Enddate', startYear=#end#, order='year')#
 		#includePartial(form)#
+		#includePartial("../put")#
+		#includePartial("../submit")#
 	#endFormTag()#
 #includePartial("../toListing")#
 </cfoutput>

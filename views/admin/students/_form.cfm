@@ -5,5 +5,4 @@
 	#textField(objectName='student', property='email', label='Email')#
 	#textField(objectName='student', property='number', label='Number')#
 	#checkBox(objectName='student', property='isonline', label='Isonline')#
-	#submitTag(class='btn')#
 </cfoutput>
