@@ -13,13 +13,13 @@
   <cffunction name="up">
     <cfscript>
 	    addRecord(table='roles',title='Admin',createdat=Now(), updatedat=Now());
-      addRecord(table='roles',title='Member',createdat=Now(), updatedat=Now());
+      	addRecord(table='roles',title='Member',createdat=Now(), updatedat=Now());
     </cfscript>
   </cffunction>
   <cffunction name="down">
     <cfscript>
 		removeRecord(table='roles',where="title='Admin'");
-    removeRecord(table='roles',where="title='Member'");
+    	removeRecord(table='roles',where="title='Member'");
     </cfscript>
   </cffunction>
 </cfcomponent>

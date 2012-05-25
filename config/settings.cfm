@@ -8,8 +8,8 @@
 	<cfset set(dataSourceName="samsite") />
 <cfelse>
 	<cfset set(dataSourceName="sam") />
-	<cfset set(reloadPassword="samsite")>
 </cfif>
+<cfset set(reloadPassword="samsite")>
 <cfset set(URLRewriting="On")>
 <!---
 	If you leave this setting commented out, Wheels will try to determine the URL rewrite capabilities automatically.

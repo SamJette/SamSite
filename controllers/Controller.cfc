@@ -1,6 +1,6 @@
 component extends="Wheels" output="false" {
   public void function init(){
-  	filters(through="checkLogin", except="admin,login,register,signin,activate");
+  	filters(through="checkLogin", except="myoutput,admin,login,register,signin,activate");
   }
 
   // checkLogin

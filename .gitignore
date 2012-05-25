@@ -34,6 +34,7 @@ doc/
 *~
 .project
 .DS_Store
+.esproj
 
 # Windows IIS files
 IsapiRewrite4.ini

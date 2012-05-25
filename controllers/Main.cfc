@@ -1,6 +1,6 @@
 ﻿component extends="Controller" output="false" {
   public void function init(){
-    //super.init();
+	//super.init();
 
   }
  public void function home(){
@@ -8,14 +8,14 @@
   }
 
   public void function login(){
-  	//initialize model
+	//initialize model
 		stuser = model("student").new();
 
   }
   public void function logout(){
-  	  if(structKeyExists(session, "stuser")){
-  	  	StructDelete(session, "stuser");
-  	  }
+	  if(structKeyExists(session, "stuser")){
+		StructDelete(session, "stuser");
+	  }
 	redirectTo(controller="main", action="login");
   }
    public void function signin(){
@@ -24,7 +24,7 @@
 				params.stuser.password = "0";
 		}
 		//find a modelobject
-    	stuser = model("student").findOne(where="email='#params.stuser.email#' AND password='#params.stuser.password#'");
+		stuser = model("student").findOne(where="email='#params.stuser.email#' AND password='#params.stuser.password#'");
 
 		if (IsObject(stuser)){
 			renderPage(action="login");

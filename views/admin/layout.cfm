@@ -54,7 +54,7 @@
           	<cfoutput>
               <cfif structKeyExists(session, "user")>
 			            <a class="btn dropdown-toggle" data-toggle="dropdown" href="##">
-			              <i class="icon-user"></i>
+			              <i class="icon-user"></i>#session.user.name#
 			              <span class="caret"></span>
 			            </a>
 			            <ul class="dropdown-menu">
