@@ -12,7 +12,7 @@ component extends="controllers.Admin" output="false" {
   	  if(structKeyExists(session, "user")){
   	  	StructDelete(session, "user");
   	  }
-	redirectTo(controller="dashboard", action="login");
+	redirectTo(controller="main", action="login");
   }
    public void function signin(){
 

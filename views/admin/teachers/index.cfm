@@ -7,7 +7,6 @@
 			<thead>
 				<tr>
 					<th>id</th>
-					<th>Firstname</th>
 					<th>Name</th>
 					<th>Password</th>
 					<th>Email</th>
@@ -19,11 +18,10 @@
 				<cfloop query="teachers">
 					<tr>
 						<td>#id#</td>
-						<td>#firstname#</td>
-						<td>#name#</td>
+						<td>#fullname#</td>
 						<td>#password#</td>
 						<td>#email#</td>
-						<td>#roleid#</td>
+						<td>#title#</td>
 						<td>#IIF(isactivated, DE("Activated"), DE("Not Activated"))#</td>
 						#includePartial("../editDelete")#
 					</tr>

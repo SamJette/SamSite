@@ -8,7 +8,6 @@
 				<tr>
 					<th>id</th>
 					<th>Class</th>
-					<th>Teacherid</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -16,7 +15,6 @@
 					<tr>
 						<td>#id#</td>
 						<td>#class#</td>
-						<td>#teacherid#</td>
 						#includePartial("../editDelete")#
 					</tr>
 				</cfloop>

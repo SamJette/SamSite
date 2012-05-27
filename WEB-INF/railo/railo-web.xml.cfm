@@ -31,7 +31,7 @@ Path placeholders:
 <!--	or ask your database distributor 																-->
 
 	<data-sources>
-	<data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionLimit="-1" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="ec2-50-19-213-178.compute-1.amazonaws.com" metaCacheTimeout="60000" name="samsite" password="encrypted:d60709400b894b4f9dcc4e89ebf350c2" port="3306" storage="false" username="sam" validate="true"/><data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="localhost" metaCacheTimeout="60000" name="sam" port="3306" storage="false" username="root" validate="false"/></data-sources>
+	<data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="true" connectionLimit="-1" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true&amp;jdbcCompliantTruncation=true&amp;zeroDateTimeBehavior=convertToNull" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="ec2-50-19-213-178.compute-1.amazonaws.com" metaCacheTimeout="60000" name="samsite" password="encrypted:ee4dcdebf9aaadab27e41d2e27fe3d3c" port="3306" storage="true" username="sam" validate="true"/><data-source allow="511" blob="false" class="org.gjt.mm.mysql.Driver" clob="false" connectionLimit="-1" connectionTimeout="1" custom="characterEncoding=UTF-8&amp;useUnicode=true" database="samsite" dsn="jdbc:mysql://{host}:{port}/{database}" host="localhost" metaCacheTimeout="60000" name="sam" password="" port="3306" storage="true" username="root" validate="false"/></data-sources>
 	
 	<resources>
     	<!--
@@ -148,7 +148,7 @@ Path placeholders:
 	<!--
 		enable and disable debugging
 	 -->
-	<debugging show-query-usage="true" template="/railo-context/templates/debugging/debugging-2-console.cfm"/>
+	<debugging show-query-usage="true" template="/railo-context/templates/debugging/debugging.cfm"/>
 		
 	<application application-log="{railo-web}/logs/application.log" application-log-level="error" cache-directory="{railo-web}/cache/" cache-directory-max-size="100mb" exception-log="{railo-web}/logs/exception.log" exception-log-level="error" listener-mode="curr2root" listener-type="modern" trace-log="{railo-web}/logs/trace.log" trace-log-level="info"/>
 	

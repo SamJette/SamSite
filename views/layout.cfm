@@ -1,6 +1,3 @@
-<cfif CGI.SERVER_NAME NEQ "samsite.local">
-  <cfsetting showDebugOutput = "no" />
-</cfif>
 <!--- Place HTML here that should be used as the default layout of your application --->
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +63,7 @@
 			</cfoutput>
 		  </div>
 		  <cfoutput>
-		   <cfif !structKeyExists(session, "user")>
+		  <cfif (!structKeyExists(session, "user")) || (variables.params.controller does not contain "admin")>
 		  <div class="nav-collapse">
 			<ul class="nav">
 			 <li class="active">#linkTo(text="<span>Admin Section</span>", controller="admin.dashboard", action="login")#</li>

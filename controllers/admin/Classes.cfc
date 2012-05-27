@@ -27,7 +27,6 @@ component extends="controllers.Admin" output="false" {
   //classes/edit/key
   public void function edit(){
     class = model("Class").findByKey(params.key);
-
     if (!IsObject(class)){
 	    flashInsert(error="Class #params.key# was not found");
 			redirectTo(action="index");

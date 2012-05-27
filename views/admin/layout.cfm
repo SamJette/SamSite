@@ -1,6 +1,3 @@
-<cfif CGI.SERVER_NAME NEQ "samsite.local">
-	<cfsetting showDebugOutput = "no" />
-</cfif>
 <!--- Place HTML here that should be used as the default layout of your application --->
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +88,8 @@
 	              <li <cfif cc eq LCase('Teachers')>class="active"</cfif>>#linkTo(text="<span>Teachers</span>", controller="admin.teachers", action="index")#</li>
 				  <li <cfif cc eq LCase('Students')>class="active"</cfif>>#linkTo(text="<span>Students</span>", controller="admin.students", action="index")#</li>
 				  <li <cfif cc eq LCase('Classes')>class="active"</cfif>>#linkTo(text="<span>Classes</span>", controller="admin.classes", action="index")#</li>
-				  <li <cfif cc eq LCase('Classes_Students')>class="active"</cfif>>#linkTo(text="<span>Classes_Students</span>", controller="admin.classes_students", action="index")#</li>
+				  <li <cfif cc eq LCase('Classes_Teachers')>class="active"</cfif>>#linkTo(text="<span>Classes_Teachers</span>", controller="admin.classes_teachers", action="index")#</li>
+          <li <cfif cc eq LCase('Classes_Students')>class="active"</cfif>>#linkTo(text="<span>Classes_Students</span>", controller="admin.classes_students", action="index")#</li>
 				  <li <cfif cc eq LCase('Roles')>class="active"</cfif>>#linkTo(text="<span>Roles</span>", controller="admin.roles", action="index")#</li>
 				  <li <cfif cc eq LCase('Schoolyears')>class="active"</cfif>>#linkTo(text="<span>Schoolyears</span>", controller="admin.schoolyears", action="index")#</li>
 				  <li <cfif cc eq LCase('Questions')>class="active"</cfif>>#linkTo(text="<span>Questions</span>", controller="admin.questions", action="index")#</li>
@@ -124,8 +122,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
 	<cfoutput>
     #javaScriptIncludeTag("jquery-1.7.2.min")#
-		#javaScriptIncludeTag("bootstrap.min")#
+    #javaScriptIncludeTag("bootstrap.min")#
     #javaScriptIncludeTag("wheels")#
+    #includeContent("yearselect")#
   </cfoutput>
      </body>
 </html>

@@ -7,7 +7,7 @@ component extends="controllers.Admin" output="false" {
 
   // answers/index
   public void function index(){
-    answers = model("Answer").findAll();
+    answers = model("Answer").findAll(include="Question", order="questionid, id");
   }
 
   // answers/show/key
@@ -23,11 +23,13 @@ component extends="controllers.Admin" output="false" {
   // answers/new
   public void function new(){
     answer = model("Answer").new();
+    questionlist = model("Question").findAll();
   }
 
   //answers/edit/key
   public void function edit(){
     answer = model("Answer").findByKey(params.key);
+    questionlist = model("Question").findAll();
 
     if (!IsObject(answer)){
 	    flashInsert(error="Answer #params.key# was not found");

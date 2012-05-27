@@ -4,5 +4,5 @@
 	#passwordField(objectName='student', property='password', label='Password')#
 	#textField(objectName='student', property='email', label='Email')#
 	#textField(objectName='student', property='number', label='Number')#
-	#checkBox(objectName='student', property='isonline', label='Isonline')#
+	#checkBox(objectName='student', property='isonline', label='Is online?')#
 </cfoutput>

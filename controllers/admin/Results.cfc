@@ -6,7 +6,8 @@ component extends="controllers.Admin" output="false" {
 
   // results/index
   public void function index(){
-    results = model("Result").findAll();
+    results = model("Result").findAll(include="Answer, Question, Student, Openquestionsresult", order="questionid, studentid, id");
+    answerlist = model("Answer").findAll();
   }
 
   // results/show/key
@@ -22,11 +23,17 @@ component extends="controllers.Admin" output="false" {
   // results/new
   public void function new(){
     result = model("Result").new();
+    answerlist = model("Answer").findAll();
+    questionlist = model("Question").findAll();
+    studentlist = model("Student").findAll();
   }
 
   //results/edit/key
   public void function edit(){
     result = model("Result").findByKey(params.key);
+    answerlist = model("Answer").findAll();
+    questionlist = model("Question").findAll();
+    studentlist = model("Student").findAll();
 
     if (!IsObject(result)){
 	    flashInsert(error="Result #params.key# was not found");

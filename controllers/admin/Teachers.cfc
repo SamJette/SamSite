@@ -6,7 +6,7 @@ component extends="controllers.Admin" output="false" {
 
   // teachers/index
   public void function index(){
-    teachers = model("Teacher").findAll();
+    teachers = model("Teacher").findAll(include="Role");
   }
 
   // teachers/show/key
@@ -22,12 +22,13 @@ component extends="controllers.Admin" output="false" {
   // teachers/new
   public void function new(){
     teacher = model("Teacher").new();
+    rolelist = model("Role").findAll(maxRows=2);
   }
 
   //teachers/edit/key
   public void function edit(){
     teacher = model("Teacher").findByKey(params.key);
-
+    rolelist = model("Role").findAll(maxRows=2);
     if (!IsObject(teacher)){
 	    flashInsert(error="Teacher #params.key# was not found");
 			redirectTo(action="index");

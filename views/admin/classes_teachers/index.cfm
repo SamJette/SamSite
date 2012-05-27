@@ -1,24 +1,24 @@
 <cfoutput>
-	<h1>Listing answers</h1>
+	<h1>Listing classes_teachers</h1>
 	#includePartial("../showFlash")#
-	<p>#linkTo(text="New answer", action="new")#</p>
+	<p>#linkTo(text="New classes_teacher", action="new")#</p>
 </cfoutput>
 <div class="span6">
 	<table class="table table-striped table-condensed row">
-		<cfoutput query="answers" group="questionid">
+		<cfoutput query="classes_teachers" group="fullName">
 			<tr>
-				<th colspan="2">#question#</th>
+				<th colspan="2">#Fullname#</th>
 			</tr>
 			<tr>
 				<th>id</th>
-				<th>Answer</th>
-				<th>Iscorrect</th>
+				<th>Schoolyear</th>
+				<th>Class</th>
 			</tr>
 			<cfoutput>
 				<tr>
 					<td>#id#</td>
-					<td>#answer#</td>
-					<td>#IIF(iscorrect, DE("Yes"), DE("No"))#</td>
+					<td>#Schoolyeardate#</td>
+					<td>#class#</td>
 					#includePartial("../editDelete")#
 				</tr>
 			</cfoutput>

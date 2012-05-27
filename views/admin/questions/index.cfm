@@ -2,31 +2,29 @@
 	<h1>Listing questions</h1>
 	#includePartial("../showFlash")#
 	<p>#linkTo(text="New question", action="new")#</p>
-	<div class="span6">
-		<table class="table table-striped table-condensed row">
-			<thead>
-				<tr>
-					<th>id</th>
-					<th>Question</th>
-					<th>Isopen</th>
-					<th>Teacherid</th>
-				</tr>
-			</thead>
-			<tbody>
-				<cfloop query="questions">
-					<tr>
-						<td>#id#</td>
-						<td>#question#</td>
-						<td>#isopen#</td>
-						<td>#teacherid#</td>
-						#includePartial("../editDelete")#
-					</tr>
-				</cfloop>
-			</tbody>
-		</table>
-	</div>
 </cfoutput>
-
-
-
-
+<div class="span6">
+	<table class="table table-striped table-condensed row">
+		<cfoutput query="questions" group="teacherid">
+			<tr>
+				<th colspan="2">#fullname#</th>
+			</tr>
+			<tr>
+				<th>id</th>
+				<th>Question</th>
+				<th>Is open?</th>
+			</tr>
+			<cfoutput>
+				<tr>
+					<td>#id#</td>
+					<td>#question#</td>
+					<td>#IIF(isopen, DE("Yes"), DE("No"))#</td>
+					#includePartial("../editDelete")#
+				</tr>
+			</cfoutput>
+			<tr>
+				<td colspan="5">&nbsp;</td>
+			</tr>
+		</cfoutput>
+	</table>
+</div>

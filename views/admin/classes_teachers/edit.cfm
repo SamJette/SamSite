@@ -1,9 +1,8 @@
 <cfoutput>
-#includePartial("startend")#
-<h1>Editing schoolyear</h1>
+<h1>Editing classes_teacher</h1>
 #includePartial("../showFlash")#
-#errorMessagesFor("schoolyear")#
-	#startFormTag(action="update", key=params.key, class="yearselect")#
+#errorMessagesFor("classes_teacher")#
+	#startFormTag(action="update", key=params.key)#
 		#includePartial("form")#
 		#includePartial("../put")#
 		#includePartial("../submit")#

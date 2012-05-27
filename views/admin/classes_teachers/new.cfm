@@ -1,7 +1,7 @@
 <cfoutput>
-	<h1>Create a New classes_student</h1>
+	<h1>Create a New classes_teacher</h1>
 	#includePartial("../showFlash")#
-	#errorMessagesFor("classes_student")#
+	#errorMessagesFor("classes_teacher")#
 	#startFormTag(action="create")#
 		#includePartial("form")#
 		#includePartial("../submit")#

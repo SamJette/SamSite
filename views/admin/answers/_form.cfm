@@ -1,5 +1,5 @@
 <cfoutput>
+	#select(objectName="answer", property="questionid", label="Question" , options=questionlist)#
 	#textField(objectName='answer', property='answer', label='Answer')#
-	#textField(objectName='answer', property='questionid', label='Questionid')#
 	#checkBox(objectName='answer', property='iscorrect', label='Iscorrect')#
 </cfoutput>
