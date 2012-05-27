@@ -1,5 +1,5 @@
 component extends="controllers.Admin" output="false" {
-  public void function init(){
+public void function init(){
     super.init();
 
   }
@@ -36,6 +36,10 @@ component extends="controllers.Admin" output="false" {
 
   // schoolyears/create
   public void function create(){
+    //fix for date -- Year conversion
+    for(i in params.schoolyear){
+        params.schoolyear[i] = #Year(params.schoolyear[i])#;
+     }
     schoolyear = model("Schoolyear").new(params.schoolyear);
 
 		if (schoolyear.save()){
@@ -50,7 +54,10 @@ component extends="controllers.Admin" output="false" {
   // schoolyears/update
   public void function update(){
     schoolyear = model("Schoolyear").findByKey(params.key);
-
+    //fix for date -- Year conversion
+    for(i in params.schoolyear){
+        params.schoolyear[i] = #Year(params.schoolyear[i])#;
+     }
 		if (schoolyear.update(params.schoolyear)){
 		  flashInsert(success="The schoolyear was updated successfully.");
       redirectTo(action="index");
