@@ -1,0 +1,16 @@
+<plugins>
+<!-- ... -->
+ <plugin>
+  <groupId>com.jelastic</groupId>
+  <artifactId>jelastic-maven-plugin</artifactId>
+  <version>[1.5,)</version>
+  <configuration>
+     <email>${jelastic.username}</email>
+     <password>${jelastic.password}</password>
+     <context>ROOT<!-- insert your context path or ROOT for default --></context>
+     <environment>question<!-- insert your environment name --></environment>
+     <api_hoster>api.jelastic.com<!-- default value "api.jelastic.com" --></api_hoster>
+  </configuration>
+ </plugin>
+<!-- ... -->
+</plugins>
