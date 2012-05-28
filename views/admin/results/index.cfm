@@ -1,3 +1,8 @@
+<cfoutput>
+	<h1>Listing results</h1>
+	#includePartial("../showFlash")#
+	<p>#linkTo(text="New result", action="new")#</p>
+</cfoutput>
 <div class="span6">
 	<table class="table table-striped table-condensed row">
 		<cfoutput query="results" group="questionid">
@@ -20,7 +25,7 @@
 							#studentanswer#
 						</cfif>
 					</td>
-					<td>#fullname#</td>
+					<td>#firstname# #name#</td>
 					<td>
 						<cfif !isopen>
 							#iscorrect#

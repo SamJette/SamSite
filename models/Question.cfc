@@ -5,5 +5,7 @@ component extends="Model" output="false" {
 		belongsTo("teacher");
 		hasMany("answers");
 		hasMany("results");
+		// Properties
+
 	}
 }

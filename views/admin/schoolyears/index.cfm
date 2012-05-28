@@ -15,8 +15,8 @@
 				<cfloop query="schoolyears">
 					<tr>
 						<td>#id#</td>
-						<td>#DateFormat(startdate, 'YYYY')#</td>
-						<td>#DateFormat(enddate, 'YYYY')#</td>
+						<td>#year(startdate)#</td>
+						<td>#year(enddate)#</td>
 						#includePartial("../editDelete")#
 					</tr>
 				</cfloop>

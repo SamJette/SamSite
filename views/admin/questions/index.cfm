@@ -7,7 +7,7 @@
 	<table class="table table-striped table-condensed row">
 		<cfoutput query="questions" group="teacherid">
 			<tr>
-				<th colspan="2">#fullname#</th>
+				<th colspan="2">#firstname# #name#</th>
 			</tr>
 			<tr>
 				<th>id</th>

@@ -5,9 +5,9 @@
 </cfoutput>
 <div class="span6">
 	<table class="table table-striped table-condensed row">
-		<cfoutput query="classes_teachers" group="fullName">
+		<cfoutput query="classes_teachers" group="teacherid">
 			<tr>
-				<th colspan="2">#Fullname#</th>
+				<th colspan="2">#firstname# #name#</th>
 			</tr>
 			<tr>
 				<th>id</th>
@@ -17,7 +17,7 @@
 			<cfoutput>
 				<tr>
 					<td>#id#</td>
-					<td>#Schoolyeardate#</td>
+					<td>#year(startdate)#-#year(enddate)#</td>
 					<td>#class#</td>
 					#includePartial("../editDelete")#
 				</tr>

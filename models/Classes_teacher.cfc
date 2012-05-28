@@ -6,6 +6,8 @@ component extends="Model" output="false" {
 		belongsTo("teacher");
 		belongsTo("schoolyear");
 	  	hasMany("teachers");
+	  	// Properties
+
 	  	//Validations
 	    validatesUniquenessOf(property="teacherid", scope="classid, schoolyearid", message="The teachers for that class already exists for that schoolyear", includeSoftDeletes="false");
 	}

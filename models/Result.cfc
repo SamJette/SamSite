@@ -1,11 +1,12 @@
 component extends="Model" output="false" {
 
 	public void function init() {
-	  		// Associations
+	  	// Associations
 		belongsTo("question");
 		belongsTo("student");
 		belongsTo("answer");
 	  	hasMany("openquestionsresult");
+	  	// Properties
 	}
 
 }
