@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN" "http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+ <!--
+
+    Configuration file for UrlRewriteFilter
+    http://tuckey.org/urlrewrite/
+
+-->
+<urlrewrite>
+    <rule>
+        <note>
+            Allow TomCat to have SES links.
+        </note>
+        <!--
+            If our URI ends with one of these extentions we will not perform
+            a URL rewrite.
+        -->
+        <condition type="request-uri" operator="notequal">\.(bmp|gif|jpe?g|png|css|js|txt|pdf|doc|xls|xml|cfc|ico|php|asp)$</condition>
+        <!--
+            If any URI begins with one of these directories, we will not
+            perform a rewrite. Helpful for running your unit tests or
+            "blocking" rewrite for some directories.
+        -->
+    <condition type="request-uri" operator="notequal">^/$</condition>
+       <condition type="request-uri" operator="notequal">^$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/railo-context(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/flex2gateway(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/jrunscripts(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/cfide(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/cfformgateway(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/files(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/images(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/javascripts(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/miscellaneous(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/stylesheets(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/robots.txt(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/sitemap.xml(.*)$</condition>
+       <condition type="request-uri" operator="notequal">^(.*)/rewrite.cfm(.*)$</condition>
+        <from>^/(.*)$</from>
+        <to>/rewrite.cfm/$1</to>
+    </rule>
+</urlrewrite>
