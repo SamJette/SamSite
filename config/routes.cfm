@@ -28,6 +28,8 @@ drawRoutes()
 		.resources(name="teachers")
 	.end()
 	.resources(name="myoutput")
+	.controller("polling")
+		.get(name="poll")
 .end();
 
 </cfscript>
